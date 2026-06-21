@@ -1,0 +1,6 @@
+{
+  "name": "BlinkTech Solutions",
+  "description": "Premium corporate website for BlinkTech Solutions, providing technology consulting, business advisory, education, and academy training.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
