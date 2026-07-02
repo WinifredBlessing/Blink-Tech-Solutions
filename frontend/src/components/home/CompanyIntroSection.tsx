@@ -29,7 +29,7 @@ export function CompanyIntroSection({ setCurrentPage }: CompanyIntroSectionProps
               Catalysts for Intellectual and Technological Capital.
             </h2>
             <p className="text-slate-600 leading-relaxed text-base">
-              BlinkTech Solutions operates at the intersection of business automation and modern tech education. Founded by a passionate collective of system architects, academic developers, and communication mentors, we address the critical dual shortage in modern emerging regions: equipping youth with lucrative vocational technological skills, and assisting home-grown businesses to digitize their structures at scale.
+              BlinkTech Solutions exists to create opportunities through technology, innovation, and skills development by helping businesses operate smarter while preparing individuals and institutions for the future.
             </p>
             
             <div className="pt-2">
@@ -79,22 +79,22 @@ export function CompanyIntroSection({ setCurrentPage }: CompanyIntroSectionProps
                 {activeTab === 'mission' && (
                   <motion.div
                     key="mission"
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.2 }}
+                    initial={{ opacity: 0, y: 15, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -15, scale: 0.98 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
                     className="space-y-4"
                     id="intro_tab_content_mission"
                   >
-                    <h3 className="text-lg font-bold text-slate-900 font-display">Democratising High-Value Digital Competency</h3>
+                    <h3 className="text-lg font-bold text-slate-900 font-display">Empowering Growth & Transformation</h3>
                     <p className="text-sm text-slate-600 leading-relaxed">
-                      To construct accessible, practical educational paradigms that directly transform digital rookies into enterprise creators. We seek to systematically eradicate technical unemployment by aligning academic outcomes directly with immediate business tooling needs.
+                      To bridge the gap between technology, education, and opportunity by delivering innovative solutions that empower growth, develop talent, and inspire transformation.
                     </p>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-semibold text-slate-600 pt-2">
-                      <li className="flex items-center gap-2"><CheckCircle size={15} className="text-brand-green" /> Pro-bono youth bootcamps</li>
-                      <li className="flex items-center gap-2"><CheckCircle size={15} className="text-brand-green" /> Direct technical alignments</li>
-                      <li className="flex items-center gap-2"><CheckCircle size={15} className="text-brand-green" /> Dynamic regional development</li>
-                      <li className="flex items-center gap-2"><CheckCircle size={15} className="text-brand-green" /> Measurable digital outputs</li>
+                      <li className="flex items-center gap-2"><CheckCircle size={15} className="text-brand-green" /> Innovative Solutions</li>
+                      <li className="flex items-center gap-2"><CheckCircle size={15} className="text-brand-green" /> Talent Development</li>
+                      <li className="flex items-center gap-2"><CheckCircle size={15} className="text-brand-green" /> Educational Bridging</li>
+                      <li className="flex items-center gap-2"><CheckCircle size={15} className="text-brand-green" /> Inspiring Transformation</li>
                     </ul>
                   </motion.div>
                 )}
@@ -102,19 +102,19 @@ export function CompanyIntroSection({ setCurrentPage }: CompanyIntroSectionProps
                 {activeTab === 'vision' && (
                   <motion.div
                     key="vision"
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -5 }}
-                    transition={{ duration: 0.2 }}
+                    initial={{ opacity: 0, y: 15, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -15, scale: 0.98 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
                     className="space-y-4"
                     id="intro_tab_content_vision"
                   >
-                    <h3 className="text-lg font-bold text-slate-900 font-display">A Fully Digitised SME Ecosystem</h3>
+                    <h3 className="text-lg font-bold text-slate-900 font-display">A Future of Limitless Opportunities</h3>
                     <p className="text-sm text-slate-600 leading-relaxed">
-                      We envision an integrated landscape where every local enterprise—from retail distributors to logistics services—possesses automated accounting engines, secure customer databases, and local search visibility. Through this digital infrastructure, we aim to accelerate local GDP developments.
+                      To shape a future where technology, education, and innovation create limitless opportunities for businesses and future leaders.
                     </p>
                     <div className="p-4 bg-brand-blue-deep/5 rounded-xl border border-brand-blue-deep/10 text-xs text-brand-blue-deep leading-relaxed font-medium">
-                      <strong className="text-brand-blue-vibrant">The Vision Target:</strong> Support 500 local enterprises and train 10,000 active learners within our initial 36 months framework.
+                      <strong className="text-brand-blue-vibrant">The Vision Target:</strong> We aim to lead the digital empowerment of institutions, creating interconnected ecosystems where tech innovation thrives.
                     </div>
                   </motion.div>
                 )}

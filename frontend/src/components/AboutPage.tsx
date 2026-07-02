@@ -118,40 +118,41 @@ export function AboutPage({ setCurrentPage }: AboutPageProps) {
         {/* SECTION 2: Mission & Vision */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-28 text-left" id="about_mission_vision_section">
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40, scale: 0.95, filter: 'blur(5px)' }}
+            whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="p-8 sm:p-10 bg-brand-blue-deep text-white rounded-3xl relative overflow-hidden group border border-white/5 shadow-xl"
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="p-8 sm:p-10 bg-brand-blue-deep text-white rounded-3xl relative overflow-hidden group border border-white/5 shadow-xl hover:shadow-2xl transition-all duration-500"
           >
             {/* Soft decorative background circles */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full translate-x-8 -translate-y-8" />
-            <div className="space-y-4 relative z-10">
-              <div className="p-3 bg-white/10 w-12 h-12 rounded-2xl text-brand-green flex items-center justify-center border border-white/10 shadow-sm transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3">
-                <Target size={24} />
+            <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full translate-x-12 -translate-y-12 transition-transform duration-700 group-hover:scale-150" />
+            <div className="space-y-5 relative z-10">
+              <div className="p-3.5 bg-white/10 w-14 h-14 rounded-2xl text-brand-green flex items-center justify-center border border-white/10 shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-brand-green/20">
+                <Target size={28} />
               </div>
-              <h3 className="text-2xl font-bold font-display">Our Mission</h3>
-              <p className="text-slate-200 text-sm leading-relaxed font-normal">
-                To bridge computational skill vacuums across modern societies. We design and deliver realistic, hands-on technology curricula that convert students into highly employable developers and entrepreneurs, while synchronizing commercial enterprises with reliable data automations.
+              <h3 className="text-3xl font-extrabold font-display tracking-tight">Our Mission</h3>
+              <p className="text-slate-200 text-base leading-relaxed font-medium">
+                To bridge the gap between technology, education, and opportunity by delivering innovative solutions that empower growth, develop talent, and inspire transformation.
               </p>
             </div>
           </motion.div>
 
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40, scale: 0.95, filter: 'blur(5px)' }}
+            whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-            className="p-8 sm:p-10 bg-slate-900 text-white rounded-3xl relative overflow-hidden group border border-slate-800 shadow-xl"
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="p-8 sm:p-10 bg-slate-900 text-white rounded-3xl relative overflow-hidden group border border-slate-800 shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-brand-blue-vibrant/30"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full translate-x-8 -translate-y-8" />
-            <div className="space-y-4 relative z-10">
-              <div className="p-3 bg-white/10 w-12 h-12 rounded-2xl text-brand-green flex items-center justify-center border border-white/10 shadow-sm transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3">
-                <Rocket size={24} />
+            <div className="absolute top-0 right-0 w-40 h-40 bg-brand-vibrant/5 rounded-full translate-x-12 -translate-y-12 transition-transform duration-700 group-hover:scale-150" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-brand-green/5 rounded-full -translate-x-12 translate-y-12 transition-transform duration-700 group-hover:scale-150" />
+            <div className="space-y-5 relative z-10">
+              <div className="p-3.5 bg-white/10 w-14 h-14 rounded-2xl text-brand-vibrant flex items-center justify-center border border-white/10 shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-brand-vibrant/20">
+                <Rocket size={28} />
               </div>
-              <h3 className="text-2xl font-bold font-display">Our Vision</h3>
-              <p className="text-slate-200 text-sm leading-relaxed font-normal">
-                To catalyze an era of regional independence powered by software. We aspire to become the standard coordinator of computational and verbal logic training across emerging markets, upscaling <AnimatedCounter value="10,000" /> corporate agents and home startups within this decade.
+              <h3 className="text-3xl font-extrabold font-display tracking-tight">Our Vision</h3>
+              <p className="text-slate-200 text-base leading-relaxed font-medium">
+                To shape a future where technology, education, and innovation create limitless opportunities for businesses and future leaders.
               </p>
             </div>
           </motion.div>
@@ -173,7 +174,7 @@ export function AboutPage({ setCurrentPage }: AboutPageProps) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {CORE_VALUES.map((val) => (
               <motion.div 

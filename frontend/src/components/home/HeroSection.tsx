@@ -76,7 +76,7 @@ export function HeroSection({ setCurrentPage }: HeroSectionProps) {
             </motion.h1>
             
             <motion.p variants={itemVariants} className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl font-medium">
-              Empowering schools, graduates, and corporations with high-velocity digital competencies, while transforming SMEs with technology configurations that double operational throughput.
+              BlinkTech Solutions exists to create opportunities through technology, innovation, and skills development by helping businesses operate smarter while preparing individuals and institutions for the future.
             </motion.p>
             
             {/* Core Hero CTAs */}

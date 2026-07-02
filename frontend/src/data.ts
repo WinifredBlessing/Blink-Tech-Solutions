@@ -272,24 +272,34 @@ export const BLOG_POSTS: BlogPost[] = [
 
 export const CORE_VALUES: ValueCard[] = [
   {
-    title: 'Ignition of Excellence',
-    description: 'We maintain an unyielding standard of quality in our content, consultations, training models, and codebase designs.',
-    iconName: 'Sparkles'
+    title: 'Innovation',
+    description: 'Pioneering new solutions and embracing creative approaches to solve complex technological challenges.',
+    iconName: 'Lightbulb'
   },
   {
-    title: 'Action-First Learning',
-    description: 'We believe skills are captured by direct execution. Passive watching halts development; building speeds it up.',
+    title: 'Integrity',
+    description: 'Operating with unwavering honesty, transparency, and ethical standards in every business interaction.',
+    iconName: 'ShieldCheck'
+  },
+  {
+    title: 'Growth',
+    description: 'Fostering continuous personal and professional development for our team, clients, and community.',
+    iconName: 'TrendingUp'
+  },
+  {
+    title: 'Empowerment',
+    description: 'Equipping individuals and enterprises with the tools and knowledge needed to control their digital future.',
     iconName: 'Zap'
   },
   {
-    title: 'Empathetic Devotion',
-    description: 'We listen carefully to the actual operational struggles of small businesses and the educational hurdles of schools to build genuine answers.',
-    iconName: 'Heart'
+    title: 'Excellence',
+    description: 'Maintaining an unyielding standard of premium quality in our services, code, and educational delivery.',
+    iconName: 'Sparkles'
   },
   {
-    title: 'Accountability & Integrity',
-    description: 'Our metrics, results, training reports, and technology implementations are fully auditable, accurate, and realistic.',
-    iconName: 'ShieldCheck'
+    title: 'Transformation',
+    description: 'Catalyzing profound positive changes that elevate business operations and individual career trajectories.',
+    iconName: 'Rocket'
   }
 ];
 
