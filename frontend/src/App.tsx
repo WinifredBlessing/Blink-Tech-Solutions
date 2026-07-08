@@ -12,10 +12,14 @@ import {
   BlogPage, 
   ContactPage 
 } from './components/SpecialPages';
+import { CourseDetails } from './components/CourseDetails';
+import { AdminLogin } from './components/AdminLogin';
+import { AdminDashboard } from './components/AdminDashboard';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
+  const [currentCourseId, setCurrentCourseId] = useState<string | null>(null);
 
   // Page switcher mapping which component should render under which PageId
   const renderActivePage = () => {
@@ -31,7 +35,13 @@ export default function App() {
       case 'debate':
         return <DebatePage />;
       case 'academy':
-        return <AcademyPage setCurrentPage={setCurrentPage} />;
+        return <AcademyPage setCurrentPage={setCurrentPage} setCurrentCourseId={setCurrentCourseId} />;
+      case 'academy-course':
+        return <CourseDetails courseId={currentCourseId} setCurrentPage={setCurrentPage} />;
+      case 'admin-login':
+        return <AdminLogin setCurrentPage={setCurrentPage} />;
+      case 'admin-dashboard':
+        return <AdminDashboard setCurrentPage={setCurrentPage} />;
       case 'projects':
         return <ProjectsPage setCurrentPage={setCurrentPage} />;
       case 'blog':

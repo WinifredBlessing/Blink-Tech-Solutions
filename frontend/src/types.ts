@@ -5,9 +5,32 @@ export type PageId =
   | 'education'
   | 'debate'
   | 'academy'
+  | 'academy-course'
+  | 'admin-login'
+  | 'admin-dashboard'
   | 'projects'
   | 'blog'
   | 'contact';
+
+export interface Course {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  thumbnail: string;
+  status: 'draft' | 'published';
+  created_at: string;
+}
+
+export interface Lesson {
+  id: string;
+  course_id: string;
+  title: string;
+  description: string;
+  video_url: string;
+  resource_url: string;
+  created_at: string;
+}
 
 export interface NavItem {
   label: string;

@@ -17,9 +17,8 @@ export const NAVIGATION_ITEMS: NavItem[] = [
   { id: 'business', label: 'Business Solutions', description: 'Enterprise advisory and corporate support' },
   { id: 'education', label: 'Education & Training', description: 'Student and teacher development programmes' },
   { id: 'debate', label: 'Debate & QUIZ', description: 'Our unique analytical and debate training' },
-  { id: 'academy', label: 'BlinkTech Academy', description: 'Practical student and professional academy' },
-  { id: 'projects', label: 'Projects & Gallery', description: 'Our impact and community project records' },
-  { id: 'blog', label: 'Blog & Insight', description: 'Latest articles and learning resources' },
+  { id: 'projects', label: 'Gallery', description: 'Our impact and community project records' },
+  { id: 'blog', label: 'Blog', description: 'Latest articles and learning resources' },
   { id: 'contact', label: 'Contact', description: 'Get in touch for consultations or courses' }
 ];
 

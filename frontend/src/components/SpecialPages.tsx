@@ -305,9 +305,28 @@ export function DebatePage() {
 /* ==========================================
    2. BLINKTECH ACADEMY PAGE
    ========================================== */
-export function AcademyPage({ setCurrentPage }: { setCurrentPage: (page: PageId) => void }) {
+import { Course } from '../types';
+import { fetchCourses } from '../api';
+import { useEffect } from 'react';
+
+export function AcademyPage({ 
+  setCurrentPage, 
+  setCurrentCourseId 
+}: { 
+  setCurrentPage: (page: PageId) => void;
+  setCurrentCourseId: (id: string | null) => void;
+}) {
   const [modalCourse, setModalCourse] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchCourses()
+      .then(data => setCourses(data))
+      .catch(err => console.error("Failed to fetch courses:", err))
+      .finally(() => setLoading(false));
+  }, []);
 
   const handleApply = (e: React.FormEvent) => {
     e.preventDefault();
@@ -365,7 +384,16 @@ export function AcademyPage({ setCurrentPage }: { setCurrentPage: (page: PageId)
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" 
           id="academy_courses_page_grid"
         >
-          {ACADEMY_COURSES.map((course) => (
+          {loading ? (
+            <div className="col-span-full py-12 text-center text-slate-500 font-mono text-sm uppercase tracking-widest animate-pulse">
+              Loading Courses...
+            </div>
+          ) : courses.length === 0 ? (
+            <div className="col-span-full py-12 text-center text-slate-500 font-mono text-sm uppercase tracking-widest">
+              No courses available at the moment.
+            </div>
+          ) : (
+            courses.map((course) => (
             <motion.div 
               key={course.title}
               variants={cardVariants}
@@ -373,28 +401,35 @@ export function AcademyPage({ setCurrentPage }: { setCurrentPage: (page: PageId)
             >
               <div className="absolute top-0 left-0 h-1 w-16 bg-gradient-to-r from-brand-blue-deep to-brand-green rounded-tl-2xl rounded-br-2xl transition-all duration-300 group-hover:w-full" />
               <div className="space-y-4 pt-2">
-                <span className="text-[10px] font-extrabold text-brand-green uppercase tracking-widest font-mono bg-brand-green/10 text-brand-dark px-2.5 py-1 rounded-full">{course.category}</span>
+                {course.thumbnail && (
+                  <div className="aspect-video w-full overflow-hidden rounded-xl bg-slate-100 mb-4 border border-slate-100">
+                    <img src={course.thumbnail} alt={course.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  </div>
+                )}
+                <span className="text-[10px] font-extrabold text-brand-green uppercase tracking-widest font-mono bg-brand-green/10 text-brand-dark px-2.5 py-1 rounded-full">{course.category || 'General'}</span>
                 <h3 className="font-display font-black text-slate-900 text-lg leading-tight pt-1">{course.title}</h3>
-                <p className="text-slate-400 text-xs italic font-normal">"{course.tagline}"</p>
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">{course.description}</p>
                 
                 <div className="flex justify-between items-center text-xs text-slate-400 pt-2 font-semibold">
-                  <span className="flex items-center gap-1.5"><Clock size={12} /> {course.duration}</span>
-                  <span className="flex items-center gap-1.5">&#9650; {course.level}</span>
+                  <span className="flex items-center gap-1.5"><Clock size={12} /> Self-Paced</span>
+                  <span className="flex items-center gap-1.5">&#9650; All Levels</span>
                 </div>
               </div>
 
               <div className="pt-6 mt-6 border-t border-slate-50/85 flex items-center justify-between">
-                <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider font-mono">Capacity limited</span>
+                <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider font-mono">Open Access</span>
                 <button
-                  onClick={() => setModalCourse(course.title)}
+                  onClick={() => {
+                    setCurrentCourseId(course.id);
+                    setCurrentPage('academy-course');
+                  }}
                   className="bg-brand-blue-deep text-white text-xs font-bold px-4 py-2.5 rounded-xl hover:bg-brand-blue-vibrant select-none cursor-pointer transition-colors shadow-2xs hover:shadow-xs active:scale-95 text-center inline-flex items-center gap-1.5"
                 >
-                  Join Waiting List <ChevronRight size={12} />
+                  Start Learning <ArrowRight size={12} />
                 </button>
               </div>
             </motion.div>
-          ))}
+          )))}
         </motion.div>
 
         {/* SECTION Learning Features, Certification, etc. */}
@@ -538,6 +573,11 @@ export function AcademyPage({ setCurrentPage }: { setCurrentPage: (page: PageId)
           )}
         </AnimatePresence>
 
+        <div className="mt-20 border-t border-slate-100 pt-10 text-center">
+          <p className="text-xs text-slate-400 font-mono">
+            BlinkTech Academy Platform • <button onClick={() => setCurrentPage('admin-login')} className="text-brand-blue-deep hover:text-brand-blue-vibrant hover:underline cursor-pointer">Admin Access</button>
+          </p>
+        </div>
       </div>
     </div>
   );

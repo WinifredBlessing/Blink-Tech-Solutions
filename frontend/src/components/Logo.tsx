@@ -5,13 +5,13 @@ interface LogoProps {
   light?: boolean;
 }
 
-export function Logo({ className = 'h-10', light = false }: LogoProps) {
+export function Logo({ className = '', light = false }: LogoProps) {
   return (
-    <div className={`flex items-center select-none ${className}`}>
-      {/* High-fidelity responsive SVG reproducing the exact uploaded BTSUL logo geometry */}
+    <div className={`flex items-center justify-center select-none ${className}`} style={{ aspectRatio: '450/180' }}>
+      {/* High-fidelity responsive SVG reproducing the exact uploaded BTSUL logo geometry with new tagline */}
       <svg 
-        viewBox="0 0 450 140" 
-        className="w-auto h-full" 
+        viewBox="0 0 450 180" 
+        className="w-full h-full object-contain" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -72,7 +72,7 @@ export function Logo({ className = 'h-10', light = false }: LogoProps) {
         {/* Letter L */}
         <path d="M363,25 L377,25 L377,79 L409,79 L409,92 L363,92 Z" fill="url(#logoBlueGrad)" />
 
-        {/* Full Title: BlinkTech Solutions text and status dot */}
+        {/* Full Title: BlinkTech Solutions text */}
         <text 
           x="125" 
           y="118" 
@@ -85,8 +85,24 @@ export function Logo({ className = 'h-10', light = false }: LogoProps) {
           BlinkTech Solutions
         </text>
         
-        {/* Dot matching tagline accent */}
-        <circle cx="398" cy="113" r="3.5" fill="#76c043" />
+        {/* Horizontal Line with Center Dot */}
+        <line x1="125" y1="140" x2="262" y2="140" stroke="url(#logoBlueGrad)" strokeWidth="1.5" />
+        <circle cx="267" cy="140" r="3.5" fill="url(#logoBlueGrad)" />
+        <line x1="272" y1="140" x2="400" y2="140" stroke="#76c043" strokeWidth="1.5" />
+
+        {/* Tagline */}
+        <text 
+          x="125" 
+          y="165" 
+          fontFamily="'Space Grotesk', system-ui, sans-serif" 
+          fontSize="13" 
+          fontWeight="500" 
+          letterSpacing="0.5" 
+        >
+          <tspan fill="url(#logoBlueGrad)">Building Skills. </tspan>
+          <tspan fill={light ? '#ffffff' : '#0f172a'}>Powering the Future of </tspan>
+          <tspan fill="#76c043">Business.</tspan>
+        </text>
       </svg>
     </div>
   );

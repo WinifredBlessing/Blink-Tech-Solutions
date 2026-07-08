@@ -32,75 +32,81 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
         
         <motion.div 
           layout
-          className={`flex items-center justify-between transition-all duration-500 ease-out mx-auto ${
+          className={`flex items-center justify-between transition-all duration-500 ease-out mx-auto w-full ${
             scrolled 
               ? 'glass-card rounded-full px-6 py-2.5 max-w-5xl shadow-[0_8px_30px_rgba(0,0,0,0.06)]' 
               : 'bg-transparent px-0 py-2 max-w-full'
           }`}
         >
           
-          {/* Logo Brand Anchor */}
-          <div 
-            onClick={() => handleNavClick('home')} 
-            className="cursor-pointer flex-shrink-0 transition-transform hover:scale-[1.02] active:scale-[0.98] duration-200"
-            id="brand_logo_anchor"
-          >
-            <Logo className={`transition-all duration-500 ${scrolled ? 'h-8' : 'h-10 md:h-12'}`} />
-          </div>
-
-          {/* Desktop Navigation Hierarchy */}
-          <nav className={`hidden lg:flex items-center gap-1.5 transition-all duration-500 ${
-            scrolled ? '' : 'bg-slate-50/60 backdrop-blur-md p-1.5 rounded-2xl border border-slate-200/50'
-          }`} id="desktop_nav_bar">
-            {NAVIGATION_ITEMS.map((item) => {
-              const isActive = currentPage === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  id={`nav_btn_${item.id}`}
-                  className={`relative px-4 py-2 text-sm font-semibold tracking-wide transition-all duration-300 rounded-xl select-none flex items-center gap-1.5 focus:outline-none overflow-hidden ${
-                    isActive 
-                      ? 'text-brand-blue-deep' 
-                      : 'text-slate-600 hover:text-brand-blue-vibrant'
-                  }`}
-                >
-                  <span className="relative z-10">{item.label}</span>
-                  {isActive && (
-                    <motion.div 
-                      layoutId="activeNavBackground"
-                      className="absolute inset-0 bg-white rounded-xl shadow-[0_2px_12px_rgba(0,58,148,0.08)] border border-slate-100 z-0"
-                      transition={{ type: 'spring', stiffness: 350, damping: 25 }}
-                    />
-                  )}
-                  {isActive && (
-                    <motion.span 
-                      layoutId="activeNavBullet"
-                      className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-brand-vibrant z-10"
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </button>
-              );
-            })}
-          </nav>
-
-          {/* Desktop Call To Action Header Actions */}
-          <div className="hidden lg:flex items-center gap-3" id="header_cta_section">
-            <button
-              onClick={() => handleNavClick('academy')}
-              id="header_cta_academy"
-              className="group relative flex items-center gap-2 px-6 py-2.5 text-sm font-bold text-white transition-all duration-300 rounded-full bg-gradient-to-r from-brand-blue-deep via-brand-blue-vibrant to-brand-blue-sky premium-shadow-md hover:shadow-brand-blue-vibrant/30 hover:scale-[1.02] active:scale-[0.98] overflow-hidden"
+          {/* Left Side: Logo */}
+          <div className="flex-1 flex justify-start">
+            <div 
+              onClick={() => handleNavClick('home')} 
+              className="cursor-pointer flex-shrink-0 transition-transform hover:scale-[1.02] active:scale-[0.98] duration-200"
+              id="brand_logo_anchor"
             >
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out rounded-full" />
-              <GraduationCap size={16} className="relative z-10 group-hover:rotate-12 transition-transform duration-300" />
-              <span className="relative z-10">BlinkTech Academy</span>
-              <ArrowUpRight size={14} className="relative z-10 opacity-80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </button>
+              <Logo className={`transition-all duration-500 ${scrolled ? 'h-10' : 'h-12 md:h-16'}`} />
+            </div>
           </div>
+
+          {/* Center: Desktop Navigation & CTA Group */}
+          <div className="hidden lg:flex items-center justify-center gap-2" id="desktop_center_group">
+            <nav className={`hidden xl:flex items-center gap-1 transition-all duration-500 ${
+              scrolled ? '' : 'bg-slate-50/60 backdrop-blur-md p-1 rounded-2xl border border-slate-200/50'
+            }`} id="desktop_nav_bar">
+              {NAVIGATION_ITEMS.map((item) => {
+                const isActive = currentPage === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => handleNavClick(item.id)}
+                    id={`nav_btn_${item.id}`}
+                    className={`relative px-2.5 xl:px-3 py-2 text-sm font-semibold tracking-wide transition-all duration-300 rounded-xl select-none flex items-center gap-1 focus:outline-none overflow-hidden whitespace-nowrap ${
+                      isActive 
+                        ? 'text-brand-blue-deep' 
+                        : 'text-slate-600 hover:text-brand-blue-vibrant'
+                    }`}
+                  >
+                    <span className="relative z-10">{item.label}</span>
+                    {isActive && (
+                      <motion.div 
+                        layoutId="activeNavBackground"
+                        className="absolute inset-0 bg-white rounded-xl shadow-[0_2px_12px_rgba(0,58,148,0.08)] border border-slate-100 z-0"
+                        transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+                      />
+                    )}
+                    {isActive && (
+                      <motion.span 
+                        layoutId="activeNavBullet"
+                        className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-brand-vibrant z-10"
+                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                  </button>
+                );
+              })}
+            </nav>
+
+            <div className="flex items-center" id="header_cta_section">
+              <button
+                onClick={() => handleNavClick('academy')}
+                id="header_cta_academy"
+                className="group relative flex items-center gap-1.5 px-4 lg:px-5 py-2.5 text-sm font-bold text-white transition-all duration-300 rounded-full bg-gradient-to-r from-brand-blue-deep via-brand-blue-vibrant to-brand-blue-sky premium-shadow-md hover:shadow-brand-blue-vibrant/30 hover:scale-[1.02] active:scale-[0.98] overflow-hidden whitespace-nowrap shrink-0"
+              >
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out rounded-full" />
+                <GraduationCap size={16} className="relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+                <span className="relative z-10">BlinkTech Academy</span>
+                <ArrowUpRight size={14} className="relative z-10 opacity-80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </button>
+            </div>
+          </div>
+
+          {/* Right Side: Spacer to perfectly center the nav group on Desktop */}
+          <div className="hidden xl:flex flex-1 justify-end"></div>
 
           {/* Mobile Navigation Trigger Button */}
-          <div className="flex lg:hidden">
+          <div className="flex xl:hidden flex-1 justify-end">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`inline-flex items-center justify-center p-2.5 rounded-full text-slate-600 hover:text-brand-blue-deep hover:bg-slate-100 focus:outline-none transition-colors ${
@@ -125,10 +131,10 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             exit={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:hidden absolute top-[110%] left-4 right-4 glass-card rounded-2xl overflow-hidden premium-shadow-lg p-2"
+            className="xl:hidden absolute top-[110%] left-4 right-4 glass-card rounded-2xl overflow-hidden premium-shadow-lg p-2 max-h-[85vh] flex flex-col"
             id="mobile_navigation_drawer"
           >
-            <div className="px-2 py-3 space-y-1.5">
+            <div className="px-2 py-3 space-y-1.5 overflow-y-auto flex-1 thin-scrollbar">
               {NAVIGATION_ITEMS.map((item) => {
                 const isActive = currentPage === item.id;
                 return (
@@ -154,11 +160,12 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
               
               <div className="pt-4 mt-4 border-t border-slate-200/50">
                 <button
-                  onClick={() => handleNavClick('contact')}
-                  id="mobile_cta_contact"
-                  className="group flex items-center justify-center w-full gap-2 px-5 py-4 text-base font-bold text-center text-white transition-all rounded-xl bg-brand-green hover:bg-brand-green/90 premium-shadow-sm hover:shadow-brand-green/30"
+                  onClick={() => handleNavClick('academy')}
+                  id="mobile_cta_academy"
+                  className="group flex items-center justify-center w-full gap-2 px-5 py-4 text-base font-bold text-center text-white transition-all rounded-xl bg-gradient-to-r from-brand-blue-deep via-brand-blue-vibrant to-brand-blue-sky premium-shadow-sm hover:shadow-brand-blue-vibrant/30"
                 >
-                  Get Free Consultation
+                  <GraduationCap size={20} className="relative z-10" />
+                  BlinkTech Academy
                   <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>
               </div>
