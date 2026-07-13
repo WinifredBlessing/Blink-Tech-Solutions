@@ -7,11 +7,11 @@ interface LogoProps {
 
 export function Logo({ className = '', light = false }: LogoProps) {
   return (
-    <div className={`flex items-center justify-center select-none ${className}`} style={{ aspectRatio: '450/180' }}>
-      {/* High-fidelity responsive SVG reproducing the exact uploaded BTSUL logo geometry with new tagline */}
+    <div className={`flex items-center justify-start select-none overflow-visible ${className}`}>
+      {/* High-fidelity responsive SVG reproducing the exact uploaded BTSOL logo geometry with new tagline */}
       <svg 
-        viewBox="0 0 450 180" 
-        className="w-full h-full object-contain" 
+        viewBox="0 0 540 180" 
+        className="w-auto h-full max-w-full object-contain overflow-visible" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -61,13 +61,13 @@ export function Logo({ className = '', light = false }: LogoProps) {
           fill="url(#logoBlueGrad)" 
         />
 
-        {/* Letter U */}
+        {/* Letter O */}
         <path 
-          d="M292,25 L306,25 L306,65 C306,78 314,84 324,84 C334,84 342,78 342,65 L342,25 L356,25 L356,65 C356,86 342,95 324,95 C306,95 292,86 292,65 Z" 
+          d="M292,65 L292,55 C292,34 306,25 324,25 C342,25 356,34 356,55 L356,65 C356,86 342,95 324,95 C306,95 292,86 292,65 Z M306,65 C306,78 314,84 324,84 C334,84 342,78 342,65 L342,55 C342,42 334,36 324,36 C314,36 306,42 306,55 L306,65 Z" 
           fill="url(#logoBlueGrad)" 
         />
-        {/* Custom Green wedge/notch on top of U - matching BTSUL mark */}
-        <path d="M342,25 L356,25 L346,43 Z" fill="#76c043" />
+        {/* Custom Green Triangle inside O */}
+        <path d="M306,25 L342,25 L324,70 Z" fill="#76c043" />
 
         {/* Letter L */}
         <path d="M363,25 L377,25 L377,79 L409,79 L409,92 L363,92 Z" fill="url(#logoBlueGrad)" />
