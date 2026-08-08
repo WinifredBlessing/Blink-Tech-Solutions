@@ -895,11 +895,11 @@ export function ContactPage() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-display text-slate-900 tracking-tight leading-none pt-2">
             Schedule a Diagnostic{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue-deep via-brand-blue-vibrant to-brand-green">
-              with our Consultants
+              with Our Consultants
             </span>
           </h1>
           <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal">
-            Have questions regarding physical curriculum deployments, company database migrations, or registration dates for the BlinkTech Academy? Contact our dispatch office directly.
+            Have questions about digital transformation, curriculum deployment, company database migration, or registration for the BlinkTech Academy? Our consultants are ready to understand your challenges, assess your needs, and recommend the right technology solutions. Submit a consultation request today and our team will get back to you to discuss the next steps.
           </p>
         </motion.div>
 
@@ -982,7 +982,7 @@ export function ContactPage() {
                   type="submit" 
                   className="w-full py-4 text-xs font-bold uppercase tracking-wider bg-brand-blue-deep hover:bg-brand-blue-vibrant text-white rounded-xl transition-all cursor-pointer shadow-md mt-2 font-display hover:scale-[1.01] active:scale-[0.99]"
                 >
-                  Lock Diagnostic Slot
+                  Request a Consultation
                 </button>
               </form>
             )}
@@ -999,8 +999,8 @@ export function ContactPage() {
           >
             
             <div className="space-y-3">
-              <h3 className="font-display font-extrabold text-xl text-slate-900">Communication Addresses</h3>
-              <p className="text-slate-550 text-xs sm:text-sm leading-relaxed">Feel free to access our representative operations channels for immediate clarifications.</p>
+              <h3 className="font-display font-extrabold text-xl text-slate-900">Communication Channels</h3>
+              <p className="text-slate-550 text-xs sm:text-sm leading-relaxed">Connect with BlinkTech Solutions through our official communication channels for enquiries, partnerships, consultations, and support.</p>
             </div>
 
             <div className="space-y-6 text-xs sm:text-sm text-slate-650">
@@ -1011,7 +1011,7 @@ export function ContactPage() {
                   <h4 className="font-extrabold text-slate-900">Operational Head Office</h4>
                   <p className="text-slate-500 mt-1.5 leading-relaxed text-xs">
                     BlinkTech Solutions Head Office,<br />
-                    Suite 40s, Innovation & Commerce Plaza,<br />
+                    Satellite Town Innovation & Commerce Plaza<br />
                     West Africa & Global Operations
                   </p>
                 </div>
@@ -1023,7 +1023,7 @@ export function ContactPage() {
                 <div>
                   <h4 className="font-extrabold text-slate-900">Email Correspondence</h4>
                   <p className="text-slate-500 mt-1.5 leading-relaxed text-xs hover:text-brand-blue-deep transition-colors">
-                    <a href="mailto:info@blinktechsolutions.com" className="font-semibold underline decoration-brand-green/30 hover:decoration-brand-blue-deep">info@blinktechsolutions.com</a>
+                    <a href="mailto:info@blinktechsolutions.co.uk" className="font-semibold underline decoration-brand-green/30 hover:decoration-brand-blue-deep">info@blinktechsolutions.co.uk</a>
                   </p>
                 </div>
               </div>
@@ -1034,7 +1034,7 @@ export function ContactPage() {
                 <div>
                   <h4 className="font-extrabold text-slate-900">Corporate Phone Channel</h4>
                   <p className="text-slate-500 mt-1.5 leading-relaxed text-xs hover:text-brand-blue-deep transition-colors">
-                    <a href="tel:+2348030000000" className="font-semibold">+234 (0) 803 000 0000</a>
+                    <a href="tel:0764270096" className="font-semibold">0764270096</a>
                   </p>
                 </div>
               </div>

@@ -34,25 +34,24 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
           layout
           className={`flex items-center justify-between transition-all duration-500 ease-out mx-auto w-full ${
             scrolled 
-              ? 'glass-card rounded-full px-6 py-2.5 max-w-5xl shadow-[0_8px_30px_rgba(0,0,0,0.06)]' 
+              ? 'glass-card rounded-full px-4 lg:px-6 py-2.5 max-w-7xl shadow-[0_8px_30px_rgba(0,0,0,0.06)]' 
               : 'bg-transparent px-0 py-2 max-w-full'
           }`}
         >
-          
           {/* Left Side: Logo */}
-          <div className="flex-1 flex justify-start">
+          <div className="flex-1 min-w-[120px] md:min-w-[200px] flex justify-start z-20">
             <div 
               onClick={() => handleNavClick('home')} 
-              className="cursor-pointer flex-shrink-0 transition-transform hover:scale-[1.02] active:scale-[0.98] duration-200"
+              className="cursor-pointer flex-shrink-0 transition-transform hover:scale-[1.02] active:scale-[0.98] duration-200 overflow-visible"
               id="brand_logo_anchor"
             >
-              <Logo className={`transition-all duration-500 ${scrolled ? 'h-10' : 'h-12 md:h-16'}`} />
+              <Logo className={`h-10 md:h-[56px] w-auto max-w-full object-contain overflow-visible transition-all duration-500`} />
             </div>
           </div>
 
           {/* Center: Desktop Navigation & CTA Group */}
-          <div className="hidden lg:flex items-center justify-center gap-2" id="desktop_center_group">
-            <nav className={`hidden xl:flex items-center gap-1 transition-all duration-500 ${
+          <div className="hidden lg:flex items-center justify-center gap-2 lg:gap-3 xl:gap-2 flex-shrink-0 z-10" id="desktop_center_group">
+            <nav className={`hidden xl:flex items-center gap-0.5 xl:gap-1 transition-all duration-500 ${
               scrolled ? '' : 'bg-slate-50/60 backdrop-blur-md p-1 rounded-2xl border border-slate-200/50'
             }`} id="desktop_nav_bar">
               {NAVIGATION_ITEMS.map((item) => {
@@ -62,7 +61,7 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
                     id={`nav_btn_${item.id}`}
-                    className={`relative px-2.5 xl:px-3 py-2 text-sm font-semibold tracking-wide transition-all duration-300 rounded-xl select-none flex items-center gap-1 focus:outline-none overflow-hidden whitespace-nowrap ${
+                    className={`relative px-2 xl:px-2.5 py-2 text-[13px] xl:text-sm font-semibold tracking-wide transition-all duration-300 rounded-xl select-none flex items-center gap-1 focus:outline-none overflow-hidden whitespace-nowrap ${
                       isActive 
                         ? 'text-brand-blue-deep' 
                         : 'text-slate-600 hover:text-brand-blue-vibrant'
@@ -103,10 +102,10 @@ export function Header({ currentPage, setCurrentPage }: HeaderProps) {
           </div>
 
           {/* Right Side: Spacer to perfectly center the nav group on Desktop */}
-          <div className="hidden xl:flex flex-1 justify-end"></div>
+          <div className="hidden xl:flex flex-1 min-w-[120px] md:min-w-[200px] justify-end"></div>
 
           {/* Mobile Navigation Trigger Button */}
-          <div className="flex xl:hidden flex-1 justify-end">
+          <div className="flex xl:hidden flex-1 min-w-[120px] md:min-w-[200px] justify-end z-20">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`inline-flex items-center justify-center p-2.5 rounded-full text-slate-600 hover:text-brand-blue-deep hover:bg-slate-100 focus:outline-none transition-colors ${
