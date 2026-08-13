@@ -108,21 +108,21 @@ export function Footer({ setCurrentPage }: FooterProps) {
                 </div>
                 <span className="font-medium pt-1">
                   BlinkTech Solutions Head Office,<br />
-                  Suite 40s, Innovation Plaza,<br />
-                  Global Operations
+                  Satellite Town Innovation & Commerce Plaza,<br />
+                  West Africa & Global Operations
                 </span>
               </li>
               <li className="flex items-center gap-3.5 group">
                 <div className="p-2 rounded-lg bg-white/5 text-brand-blue-sky group-hover:bg-brand-blue-sky/20 transition-colors">
                   <Mail size={16} />
                 </div>
-                <a href="mailto:info@blinktechsolutions.com" className="hover:text-white transition-colors font-medium">info@blinktechsolutions.com</a>
+                <a href="mailto:info@blinktechsolutions.co.uk" className="hover:text-white transition-colors font-medium">info@blinktechsolutions.co.uk</a>
               </li>
               <li className="flex items-center gap-3.5 group">
                 <div className="p-2 rounded-lg bg-white/5 text-brand-blue-vibrant group-hover:bg-brand-blue-vibrant/20 transition-colors">
                   <Phone size={16} />
                 </div>
-                <a href="tel:+2348000000000" className="hover:text-white transition-colors font-medium">+234 (0) 803 000 0000</a>
+                <a href="tel:0764270096" className="hover:text-white transition-colors font-medium">0764270096</a>
               </li>
             </ul>
  
